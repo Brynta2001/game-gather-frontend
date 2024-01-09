@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Chat - Game Gather</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+    <style>
+        body {
+            background-color: #1e2123;
+            color: #fff;
+        }
+
+        .logo-container {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .logo-container img {
+            margin-top: 2%;
+            max-width: 25%;
+            height: auto;
+        }
+
+        .page-content {
+            text-align: center;
+            position: relative;
+            background-color: #26282a;
+            padding: 20px;
+        }
+
+        #chat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #messages {
+            width: 50%;
+            margin-top: 20px;
+            background-color: #26282a;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            overflow-y: auto;
+            max-height: 300px;
+            color: #fff;
+        }
+
+        #messageContent {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 13px;
+            text-align: center;
+            resize: none;
+        }
+
+        #send {
+            background-color: #e75f8c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 50px;
+            width: 35%;
+            margin-top: 10px;
+        }
+
+        #send:hover {
+            background-color: #fff;
+            color: #e75f8c;
+        }
+
+        footer {
+            margin-top: 50px;
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <div class="container">
+        <div style="text-align: center;">
+            <a href="index.html" class="logo-container">
+                <img src="assets/images/logo.png" alt="Game Gather">
+            </a>
+        </div>
+    </div>
+
+    <!-- ***** Contenedor de Contenido de la Página con Formulario ***** -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="page-content" style="margin-top: 5%;">
+                    <div id="chat">
+                        <div id="messages"></div>
+                        <br />
+                        <textarea id="messageContent" placeholder="Type your message..." rows="3"></textarea>
+                        <button id="send" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ***** Footer de la Página ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright © 2036 <a href="#">Game Gather</a> Company. All rights reserved.
+                        <br>Design: <a href="https://templatemo.com" target="_blank"
+                            title="free CSS templates">MetaLabs</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ***** Scripts ***** -->
+    <script src="./main.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>
