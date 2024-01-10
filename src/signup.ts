@@ -1,7 +1,8 @@
 import { axiosInstance } from "./utils/axios";
 
 const formSignUp = document.querySelector<HTMLButtonElement>('#registerForm')!;
-const errorMessage = document.getElementById('error-message') as HTMLParagraphElement;
+const modalTitle = document.getElementById('staticBackdropLabel') as HTMLHeadingElement;
+const modalMessage = document.getElementById('modal-message') as HTMLParagraphElement;
 
 formSignUp.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -9,10 +10,18 @@ formSignUp.addEventListener('submit', async (event) => {
     try {
         const response = await signup();
         console.log(response);
+        modalTitle.textContent = 'Success';
+        modalMessage.textContent = 'Usuario created successfully';
+        $('#staticBackdrop').modal('show');
+        $('#staticBackdrop').on('hidden.bs.modal', function () {
+            // Redirigir a la página login.html
+            window.location.href = 'login.html';
+        });
     } catch (e) {
         console.error("Error:", e);
         if (isAxiosError(e) && e.response && e.response.data && e.response.data.error) {
-            errorMessage.textContent = e.response.data.message[0];
+            modalTitle.textContent = 'Error creating user';
+            modalMessage.textContent = e.response.data.message[0];
             $('#staticBackdrop').modal('show');
         }
     }
@@ -24,7 +33,7 @@ export const signup = async () => {
             "Content-Type": "application/json",
         }
     });
-    return response.data;
+    return response;
 };
 
 // Función auxiliar para verificar si un objeto es de tipo AxiosError
