@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
     <style>
-        body {
+         body {
             background-color: #1e2123;
             color: #fff;
         }
@@ -63,7 +63,7 @@
             display: block;
             margin: 0 auto;
             font-size: 13px;
-            text-align: center;
+            
         }
 
         .register-form input:focus {
@@ -96,20 +96,13 @@
             text-align: center;
         }
 
-        .button-modal {
-            background-color: #e75f8c;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 50px;
-            width: 35%;
+        .register-form label {
+            display: block;
+            margin-bottom: 8px;
         }
 
-        .button-modal:hover {
-            background-color: #fff;
-            color: #e75f8c;
+        .form-div{
+            width: 80%;
         }
     </style>
 </head>
@@ -146,22 +139,30 @@
                         <br />
                         <form id="registerForm">
                             <div class="form-group">
-                                <label for="username">Username</label>
+                                <div class="d-flex d-flex justify-content-center">
+                                    <label for="username" class="d-flex form-div">Username</label>
+                                </div>
                                 <input type="text" id="username" name="username" class="form-control" required>
                             </div>
                             <br />
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <div class="d-flex d-flex justify-content-center">
+                                    <label for="email" class="d-flex form-div">Email</label>
+                                </div>
                                 <input type="email" id="email" name="email" class="form-control" required>
                             </div>
                             <br />
                             <div class="form-group">
-                                <label for="password">Password</label>
+                                <div class="d-flex d-flex justify-content-center">
+                                    <label for="password" class="d-flex form-div">Password</label>
+                                </div>
                                 <input type="password" id="password" name="password" class="form-control" required>
                             </div>
                             <br />
                             <div class="form-group">
-                                <label for="fullName">Full Name</label>
+                                <div class="d-flex d-flex justify-content-center">
+                                    <label for="fullName" class="d-flex form-div">Full Name</label>
+                                </div>
                                 <input type="text" id="fullName" name="fullName" class="form-control" required>
                             </div>
                             <br />
