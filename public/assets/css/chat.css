@@ -1,0 +1,157 @@
+section {
+    margin: 0;    
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    width: 100%;
+    padding: 15px;
+    grid-template-rows: 1fr;
+  }
+
+#chat {
+    
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    width:  100%;
+    
+    max-height: 500px;
+    position: relative;
+  }
+
+  #form {
+    bottom: 0;
+    display: flex;
+    height: 48px;
+    left: 0;
+    padding: 4px;
+    position: absolute;
+    right: 0;
+  }
+
+  #input {
+    border-radius: 9999px;
+    border: 1px solid #eee;
+    flex: 1;
+    margin: 4px;
+    padding: 0 8px;
+  }
+
+  #input:focus {
+    outline: none;
+  }
+
+  #form>button {
+    background: #09f;
+    color: #fff;
+    border: none;
+    margin: 4px;
+    border-radius: 4px;
+  }
+
+  #form>button:hover {
+    background: #0af;
+  }
+
+  #messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .scroll{
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+  }
+
+  #messages>li {
+    padding: 0.5rem 1rem;
+  }
+
+  #messages>li:nth-child(odd) {
+    background: #4c4848;
+  }
+
+  #log {
+    display: none;
+  }
+  .comment-section{
+    background-color: #27292a;
+    color: #fff;
+    margin-top: 1rem;
+    
+  }
+  .comment-section li{
+    padding: 5px;
+    margin-top: 1rem;
+    
+  }
+
+  .comment-section .username{
+    padding-top: 15px;
+    margin-left: 3px;
+  }
+
+  .comment-section .comment{
+    padding-top: 10px;
+    margin-left: 3px;
+    color: #fff;
+    padding-left: 4px;
+  }
+
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .username {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .comment{
+    color: #fff;
+  }
+
+  .message{
+    margin-top: 30px;
+  }
+
+
+  .navbar {
+    background-color: #333;
+    padding: 10px;
+    color: white;
+    text-align: center;
+  }
+
+  ul#messages.comment-section {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px; /* Altura fija para el contenedor ul */
+    overflow-y: auto; /* Agrega barra de desplazamiento vertical si es necesario */
+  }
+
+  .message {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .username {
+    font-weight: bold;
+  }
+
+  .comment {
+    margin-top: 5px;
+  }

@@ -134,6 +134,11 @@
     justify-content: center;
     margin-bottom: 10px;
     color: #e75f8c;
+    
+  }
+
+  .pl-rating{
+    padding-right: 12px;
   }
   
   .star {
@@ -183,8 +188,14 @@
     padding-left: 4px;
   }
 
+  .input-commentary{
+  
+    padding: 0 13px;
+  }
+
   .input-commentary input{
     margin-right: 1rem;
+  
   }
 
   .publisher{
