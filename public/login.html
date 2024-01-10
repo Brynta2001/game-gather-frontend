@@ -10,101 +10,8 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
-    <style>
-        body {
-            background-color: #1e2123;
-            color: #fff;
-        }
-
-        .logo-container {
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        .logo-container img {
-            margin-top: 2%;
-            max-width: 25%;
-            height: auto;
-        }
-
-        .page-content {
-            text-align: center;
-            position: relative;
-            background-color: #26282a;
-            padding: 20px;
-        }
-
-        .login-form {
-            max-width: 400px;
-            margin: 0 auto;
-            background: #1e2123;
-            padding: 20px;
-            border-radius: 25px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .login-form h2 {
-            color: #333;
-            font-size: 28px;
-        }
-
-        .login-form label {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .login-form input {
-            width: 80%;
-            padding: 8px;
-            margin-bottom: 16px;
-            border: 1px solid #ccc;
-            border-radius: 50px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            display: block;
-            margin: 0 auto;
-            font-size: 13px;
-            text-align: center;
-        }
-
-        .login-form input:focus {
-            background-color: transparent;
-            outline: none;
-            color: #fff;
-        }
-
-        .login-form button {
-            background-color: #e75f8c;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 50px;
-            width: 35%;
-        }
-
-        .login-form button:hover {
-            background-color: #fff;
-            color: #e75f8c;
-        }
-
-        .logo-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 80%;
-        }
-
-        footer {
-            margin-top: 50px;
-            background-color: #343a40;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/simple-form.css">
+    
 </head>
 
 <body>
@@ -144,12 +51,16 @@
                             </div>
                             <br />
                             <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" id="username" name="username" class="form-control" required>
+                                <div class="d-flex d-flex justify-content-center">
+                                    <label for="username" class="d-flex form-div">Username</label>                                    
+                                </div>
+                                <input type="text" id="username" name="username" class="form-control" required>                                
                             </div>
                             <br />
                             <div class="form-group">
-                                <label for="password">Password</label>
+                                <div class="d-flex d-flex justify-content-center">
+                                    <label for="password" class="d-flex form-div">Password</label>
+                                </div>
                                 <input type="password" id="password" name="password" class="form-control" required>
                             </div>
                             <br />
