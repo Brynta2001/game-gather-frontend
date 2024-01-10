@@ -1,8 +1,8 @@
 import { axiosInstance } from "./utils/axios";
 
-const formSignUp = document.querySelector<HTMLButtonElement>('#registerForm')!;
+const formGame = document.querySelector<HTMLButtonElement>('#createForm')!;
 
-formSignUp.addEventListener('submit', async (event) => {
+formGame.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const response = await signup();
@@ -10,7 +10,7 @@ formSignUp.addEventListener('submit', async (event) => {
 });
 
 export const signup = async () => {
-    const response = await axiosInstance.post("/auth/signup", formSignUp, {
+    const response = await axiosInstance.post("/games", formGame, {
         headers: {
             "Content-Type": "application/json",
         }
