@@ -129,14 +129,13 @@
                           </div>
                         </div>
                         <div class="card-footer-item row d-flex">
-                          <div class="row">
-                            <div class="rating float-right flex-end">
-                              <span class="star"><i class="fa-regular fa-star"></i></span>
-                              <span class="star"><i class="fa-regular fa-star"></i></span>
-                              <span class="star"><i class="fa-regular fa-star"></i></span>
-                              <span class="star"><i class="fa-regular fa-star"></i></span>
-                              <span class="star"><i class="fa-regular fa-star"></i></span>
-                            </div>
+                          <div class="rating float-right flex-end">
+                            <span class="star" onclick="changeRating(1)"><i class="fa-regular fa-star"></i></span>
+                            <span class="star" onclick="changeRating(2)"><i class="fa-regular fa-star"></i></span>
+                            <span class="star" onclick="changeRating(3)"><i class="fa-regular fa-star"></i></span>
+                            <span class="star" onclick="changeRating(4)"><i class="fa-regular fa-star"></i></span>
+                            <span class="star" onclick="changeRating(5)"><i class="fa-regular fa-star"></i></span>
+                          </div>
                           </div>
                         </div>
                         <div class="mtcard-1">
@@ -216,6 +215,21 @@
 
   <!-- Scripts -->
   <script>
+    function changeRating(selectedRating) {
+      const stars = document.querySelectorAll('.star');
+  
+      stars.forEach((star, index) => {
+        const starIcon = star.querySelector('i');
+  
+        if (index < selectedRating) {
+          // Cambiar a estrella llena si el índice es menor que la calificación seleccionada
+          starIcon.classList.replace('fa-regular', 'fa-solid');
+        } else {
+          // Restablecer a estrella regular si el índice es mayor o igual a la calificación seleccionada
+          starIcon.classList.replace('fa-solid', 'fa-regular');
+        }
+      });
+    }
   </script>
 
 
