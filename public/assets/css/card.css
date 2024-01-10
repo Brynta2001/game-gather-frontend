@@ -144,7 +144,7 @@
   }
   
   .star:hover {
-    background-color: #e75f8c;
+    color: #ccc;
   }
 
   .card-footer-item .username {
