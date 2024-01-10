@@ -51,3 +51,65 @@
     }
   }
 }
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  input{
+    width: 50%
+  }
+
+  input:focus {
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+}
+
+
+textarea{
+    height: 300px;
+    
+    
+}
+
+.form-control{
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.form-control:focus {
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+}
+
+button {
+    background-color: #e75f8c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50px;
+    width: 35%;
+}
+
+button i{
+   margin-right: 12px;
+}
+
+.left{
+    text-align: left;
+}

@@ -84,28 +84,29 @@
                 <form action method="post" class="color-1">
   
                     <h1><strong class="color-3">Game upload</strong></h1>
-                    
-                    <div class="form-group">
-                      <label for="title">Title</label>
+                    <br>
+                    <label for="title">Title</label>
+                    <div class="form-group left">                      
                       <input type="text" name="title" id="title" class="form-controll"/>
                     </div>
                     <br>
                     <div class="form-group">
-                      <label for="caption">description</label>
-                      <input type="text" name="caption" id="caption" class="form-controll"/>
+                        <label for="description">Description</label>
+                        <!-- Cambié el tipo de input a textarea -->
+                        <textarea name="description" id="description" class="form-control"></textarea>
                     </div>
                     <br>
                     <div class="form-group file-area">
-                          <label for="images">Image</label>
-                      <input type="file" name="images" id="images" required="required" multiple="multiple"/>
-                      <div class="file-dummy">
-                        <div class="success">Great, your files are selected. Keep on.</div>
-                        <div class="default">Please select some files</div>
+                          <label for="images">Upload an Image</label>
+                      <input type="file" name="images" id="images" accept=".jpg, .jpeg, .png" required="required"/>
+                      <div class="file-dummy" onclick="chooseFile()">
+                        <div class="success" id="preview-container"></div>
+                        <div class="default"><h2><i class="fa-solid fa-upload"></i></h2></div>
                       </div>
                     </div>
                     
-                    <div class="form-group">
-                      <button type="submit">Upload images</button>
+                    <div class="form-group d-flex justify-content-center mtcard-1">
+                      <button type="submit"><i class="fa-solid fa-floppy-disk"></i>Guardar</button>
                     </div>
                     
                 </form>  
@@ -133,21 +134,31 @@
 
   <!-- Scripts -->
   <script>
-    function changeRating(selectedRating) {
-      const stars = document.querySelectorAll('.star');
+     function chooseFile() {
+    document.getElementById('images').click();
+  }
 
-      stars.forEach((star, index) => {
-        const starIcon = star.querySelector('i');
+  document.getElementById('images').addEventListener('change', function () {
+    var fileInput = this;
+    var previewContainer = document.getElementById('preview-container');
 
-        if (index < selectedRating) {
-          // Cambiar a estrella llena si el índice es menor que la calificación seleccionada
-          starIcon.classList.replace('fa-regular', 'fa-solid');
-        } else {
-          // Restablecer a estrella regular si el índice es mayor o igual a la calificación seleccionada
-          starIcon.classList.replace('fa-solid', 'fa-regular');
-        }
-      });
+    // Limpiar la vista previa anterior
+    while (previewContainer.firstChild) {
+      previewContainer.removeChild(previewContainer.firstChild);
     }
+
+    var files = fileInput.files;
+    if (files.length > 0) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var img = document.createElement('img');
+        img.className = 'preview';
+        img.src = e.target.result;
+        previewContainer.appendChild(img);
+      };
+      reader.readAsDataURL(files[0]);
+    }
+  });
   </script>
 
 
