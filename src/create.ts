@@ -10,7 +10,13 @@ formGame.addEventListener('submit', async (event) => {
 });
 
 export const signup = async () => {
-    const response = await axiosInstance.post("/games", formGame, {
+    const response = await axiosInstance.post("/games", {
+        title: "Rocket League",
+        publisher: "Psyonix",
+        releaseYear: 2015,
+        genre: ["Sports"],
+        platforms: ["PC"],
+    }, {
         headers: {
             "Content-Type": "application/json",
         }
