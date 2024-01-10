@@ -113,3 +113,24 @@ button i{
 .left{
     text-align: left;
 }
+
+.upload-form{
+  width: 80%;
+  background-color: #1e2123;
+  padding: 5%;
+  border-radius: 25px;
+}
+
+@media (max-width: 600px) {
+  .upload-form {
+      width: 100%;
+  }
+}
+
+.upload-form input{
+  margin: 0;
+}
+
+.upload-form input{
+  margin: 0;
+}
