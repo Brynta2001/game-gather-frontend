@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>Login - Game Gather</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="assets/css/mail.css">
+</head>
+
+<body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <div class="container">
+        <div style="text-align: center;">
+            <a href="#" class="logo-container">
+                <img src="assets/images/logo.png" alt="Cyborg Gaming">
+            </a>
+        </div>
+    </div>
+
+    <!-- ***** Contenedor de Contenido de la Página con Formulario ***** -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="page-content" style="margin-top: 5%;">
+                    <div class="d-flex justify-content-center">
+                        <div class="mail-form">
+                            <h4 style="color: #ed6190;">Reset your password</h4>
+                            <br />
+                            <form id="mailForm" action="/" method="post">
+                                <!-- Mensaje de error -->
+                                <div id="error-message" style="color: #ff0000; display: none;">
+                                    Not a valid email. Please try again.
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <label class="label-email" for="email">Provide the confirmed email address associated with your user account, and we will dispatch a link to reset your password.</label>
+                                    <input type="text" id="email" name="email" class="form-control" placeholder="email" required>
+                                </div>
+                                <br />
+                                
+                                <button type="submit" class="btn btn-primary" onclick="checkLogin()">Send password reset email</button>
+                                <br />
+                            </form>
+                            <br />                        
+                        </div>
+                    </div>                          
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ***** Footer de la Página ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved.
+                        <br>Design: <a href="https://templatemo.com" target="_blank"
+                            title="free CSS templates">MetaLabs</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ***** Scripts ***** -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        // Función para verificar el inicio de sesión (debes implementarla según tus necesidades)
+        function checkLogin() {
+            // Aquí iría tu lógica de verificación del inicio de sesión
+            // Si el inicio de sesión es incorrecto, muestra el mensaje de error y el enlace
+            document.getElementById('error-message').style.display = 'block';
+            document.getElementById('recover-link').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
