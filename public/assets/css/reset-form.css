@@ -1,0 +1,105 @@
+body {
+    background-color: #1e2123;
+    color: #fff;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo-container img {
+    margin-top: 2%;
+    max-width: 25%;
+    height: auto;
+}
+
+.page-content {
+    text-align: center;
+    position: relative;
+    background-color: #26282a;
+    padding: 20px;
+}
+
+.reset-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #1e2123;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reset-form{
+    padding-top: 33px;
+}
+
+.reset-form h2 {
+    color: #333;
+    font-size: 28px;
+}
+
+.reset-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.reset-form input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    font-size: 13px;
+    text-align: center;
+}
+
+.reset-form input:focus {
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+}
+
+.reset-form button {
+    background-color: #e75f8c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50px;
+    width: 65%;
+}
+
+.reset-form button:hover {
+    background-color: #fff;
+    color: #e75f8c;
+}
+
+.logo-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+}
+
+footer {
+    margin-top: 50px;
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.form-div{
+    width: 80%;
+}
+
+#username{
+    font-weight: 200;
+}
