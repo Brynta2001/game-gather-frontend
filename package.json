@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
+    "@types/jquery": "^3.5.29",
     "@types/node": "^20.10.8",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
