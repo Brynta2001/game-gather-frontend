@@ -2,180 +2,165 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Create Game - Game Gather</title>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
-    <style>
-        body {
-            background-color: #1e2123;
-            color: #fff;
-        }
 
-        .logo-container {
-            text-align: center;
-            padding: 20px 0;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        .logo-container img {
-            margin-top: 2%;
-            max-width: 25%;
-            height: auto;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-        .page-content {
-            text-align: center;
-            position: relative;
-            background-color: #26282a;
-            padding: 20px;
-        }
+  <title>Game Gather</title>
 
-        .create-form {
-            max-width: 400px;
-            margin: 0 auto;
-            background: #1e2123;
-            padding: 20px;
-            border-radius: 25px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f9e2e8e2a6.js" crossorigin="anonymous"></script>
 
-        .create-form h2 {
-            color: #ed6190;
-            font-size: 28px;
-        }
-
-        .create-form label {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .create-form input {
-            width: 80%;
-            padding: 8px;
-            margin-bottom: 16px;
-            border: 1px solid #ccc;
-            border-radius: 50px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            display: block;
-            margin: 0 auto;
-            font-size: 13px;
-            text-align: center;
-        }
-
-        .create-form input:focus {
-            background-color: transparent;
-            outline: none;
-            color: #fff;
-        }
-
-        .create-form button {
-            background-color: #e75f8c;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 50px;
-            width: 50%;
-            margin-top: 10px;
-        }
-
-        .create-form button:hover {
-            background-color: #ff6384;
-        }
-
-        footer {
-            margin-top: 50px;
-            background-color: #343a40;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-    </style>
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/card.css" />
+  <link rel="stylesheet" href="assets/css/create.css" />
 </head>
 
 <body>
-    <!-- ***** Preloader Start ***** -->
-    <div id="js-preloader" class="js-preloader">
-        <div class="preloader-inner">
-            <span class="dot"></span>
-            <div class="dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </div>
-    <!-- ***** Preloader End ***** -->
 
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
     <div class="container">
-        <div style="text-align: center;">
-            <a href="index.html" class="logo-container">
-                <img src="assets/images/logo.png" alt="Game Gather">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo.png" alt="">
             </a>
-        </div>
-    </div>
+            <!-- ***** Logo End ***** -->
 
-    <!-- ***** Contenedor de Contenido de la Página con Formulario ***** -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 offset-lg-3">
-                <div class="page-content" style="margin-top: 5%;">
-                    <div class="create-form">
-                        <h2>Create New Game</h2>
-                        <form id="createForm">
-                            <div class="form-group">
-                                <label for="title">Title</label>
-                                <input type="text" id="title" name="title" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="developer">Developer</label>
-                                <input type="text" id="developer" name="developer" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="releaseYear">Release Year</label>
-                                <input type="text" id="releaseYear" name="releaseYear" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="gender">Gender</label>
-                                <input type="text" id="gender" name="gender" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="supportedPlatforms">Supported Platforms</label>
-                                <input type="text" id="supportedPlatforms" name="supportedPlatforms"
-                                    class="form-control" required>
-                            </div>
-                            <button type="submit">Create Game</button>
-                        </form>
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="index.html">Logout</a></li>
+              <li><a href="profile.html">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->           
+                      
+            
+              
+              
+              
+             
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+            <div class="container">
+                <form action method="post" class="color-1">
+  
+                    <h1><strong class="color-3">Game upload</strong></h1>
+                    
+                    <div class="form-group">
+                      <label for="title">Title</label>
+                      <input type="text" name="title" id="title" class="form-controll"/>
                     </div>
-                </div>
+                    <br>
+                    <div class="form-group">
+                      <label for="caption">description</label>
+                      <input type="text" name="caption" id="caption" class="form-controll"/>
+                    </div>
+                    <br>
+                    <div class="form-group file-area">
+                          <label for="images">Image</label>
+                      <input type="file" name="images" id="images" required="required" multiple="multiple"/>
+                      <div class="file-dummy">
+                        <div class="success">Great, your files are selected. Keep on.</div>
+                        <div class="default">Please select some files</div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <button type="submit">Upload images</button>
+                    </div>
+                    
+                </form>  
             </div>
         </div>
+      </div>
+      <!-- ***** Details End ***** -->
     </div>
+  </div>
+  </div>
+  </div>
 
-    <!-- ***** Footer de la Página ***** -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright © 2036 <a href="#">Game Gather</a> Company. All rights reserved.
-                        <br>Design: <a href="https://templatemo.com" target="_blank"
-                            title="free CSS templates">MetaLabs</a>
-                    </p>
-                </div>
-            </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2036 <a href="#">Game Gather</a> Company. All rights reserved.
+
+            <br>Design: <a>MetaLabs</a>
+          </p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </footer>
 
-    <!-- ***** Scripts ***** -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script type="module" src="../src/create.ts"></script>
-    <!-- Otros scripts si los necesitas -->
+  <!-- Scripts -->
+  <script>
+    function changeRating(selectedRating) {
+      const stars = document.querySelectorAll('.star');
+
+      stars.forEach((star, index) => {
+        const starIcon = star.querySelector('i');
+
+        if (index < selectedRating) {
+          // Cambiar a estrella llena si el índice es menor que la calificación seleccionada
+          starIcon.classList.replace('fa-regular', 'fa-solid');
+        } else {
+          // Restablecer a estrella regular si el índice es mayor o igual a la calificación seleccionada
+          starIcon.classList.replace('fa-solid', 'fa-regular');
+        }
+      });
+    }
+  </script>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+
 </body>
 
 </html>
