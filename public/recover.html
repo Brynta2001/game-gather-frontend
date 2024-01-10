@@ -52,11 +52,11 @@
                                 <br />
                                 <div class="form-group">
                                     <label class="label-email" for="email">Provide the confirmed email address associated with your user account, and we will dispatch a link to reset your password.</label>
-                                    <input type="text" id="email" name="email" class="form-control" placeholder="email" required>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="email" required>
                                 </div>
                                 <br />
                                 
-                                <button type="submit" class="btn btn-primary" onclick="checkEmail()">Send password reset email</button>
+                                <button type="submit" class="btn btn-primary" onclick="checkEmail()" >Send password reset email</button>
                                 <br />
                             </form>
                             <br />                        
@@ -88,12 +88,19 @@
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
+
+    document.getElementById('mailForm').addEventListener('submit', function(event) {
+      // Prevent the default form submission behavior
+      event.preventDefault();     
+      
+    });
+
         // Función para verificar el inicio de sesión (debes implementarla según tus necesidades)
         function checkEmail() {
             // Aquí iría tu lógica de verificación del inicio de sesión
             // Si el inicio de sesión es incorrecto, muestra el mensaje de error y el enlace
             document.getElementById('error-message').style.display = 'block';
-            document.getElementById('recover-link').style.display = 'block';
+            
         }
     </script>
 </body>
