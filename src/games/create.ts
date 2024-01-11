@@ -1,5 +1,14 @@
 import { axiosInstance } from "../utils/axios";
 
+const token: string | null = localStorage.getItem('token');
+/*
+if (!token) {
+    window.location.href = '../auth/login.html';
+} else {
+    console.log('Token válido:', token);
+}*/
+
+
 const createGameForm = document.querySelector<HTMLButtonElement>('#create-game-form')!;
 const modalTitle = document.getElementById('staticBackdropLabel') as HTMLHeadingElement;
 const modalMessage = document.getElementById('modal-message') as HTMLParagraphElement;
