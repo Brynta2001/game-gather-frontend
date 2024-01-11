@@ -1,5 +1,8 @@
 import { axiosInstance } from "../utils/axios";
 
+const id = new URLSearchParams(window.location.search).get('id')!;
+console.log(id);
+
 const getGame = async (id: number) => {
     const game = await axiosInstance.get(`/games/${id}`);
     return game.data;
@@ -35,7 +38,7 @@ formEdit.addEventListener('submit', async (event) => {
         return element.text;
     });
 
-    const createGame = {
+    const editGame = {
         title: document.querySelector<HTMLInputElement>('#title')!.value,
         publisher: document.querySelector<HTMLInputElement>('#publisher')!.value,
         releaseYear: +document.querySelector<HTMLInputElement>('#releaseYear')!.value,
@@ -45,22 +48,22 @@ formEdit.addEventListener('submit', async (event) => {
         image: "",
     };
 
-    await edit(createGame);
+    await edit(editGame);
 });
 
-const edit = async (createGame: any) => {
+const edit = async (editGame: any) => {
 
-    await axiosInstance.patch("/games/images", {
+    await axiosInstance.post("/games/images", {
         file: document.querySelector('#images')!.files[0]
     }, {
         headers: {
             'Content-Type': 'multipart/form-data',
         }
     }).then((response) => {
-        createGame.image = response.data.secureUrl;
+        editGame.image = response.data.secureUrl;
     })
 
-    await axiosInstance.patch("/games", createGame, {
+    await axiosInstance.patch(`/games/${id}`, editGame, {
         headers: {
             'Content-Type': 'application/json',
         }
