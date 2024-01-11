@@ -125,7 +125,10 @@
                 </div>
                 <br>
                 <div class="form-group file-area">
-                  <label for="images">Upload an Image</label>
+                  
+                  <div>
+                    <label for="images">Upload an Image</label>                    
+                  </div>                 
                   <input type="file" name="images" id="images" accept=".jpg, .jpeg, .png" required="required" />
                   <div class="file-dummy" onclick="chooseFile()">
                     <div class="success" id="preview-container"></div>
@@ -133,7 +136,9 @@
                       <h2><i class="fa-solid fa-upload color-1"></i></h2>
                     </div>
                   </div>
+                  
                 </div>
+                
 
                 <div class="form-group d-flex justify-content-center mtcard-1">
                   <button type="submit"><i class="fa-solid fa-floppy-disk"></i>Guardar</button>
@@ -171,6 +176,7 @@
     document.getElementById('images').addEventListener('change', function () {
       var fileInput = this;
       var previewContainer = document.getElementById('preview-container');
+      var removeBtn = document.querySelector('.remove-btn');
 
       // Limpiar la vista previa anterior
       while (previewContainer.firstChild) {
@@ -185,10 +191,22 @@
           img.className = 'preview';
           img.src = e.target.result;
           previewContainer.appendChild(img);
+          removeBtn.style.display = 'block';
         };
         reader.readAsDataURL(files[0]);
       }
     });
+
+    function removeFile() {
+    var input = document.getElementById('images');
+    var previewContainer = document.getElementById('preview-container');
+    var removeBtn = document.querySelector('.remove-btn');
+
+      input.value = '';
+      previewContainer.innerHTML = '';
+      removeBtn.style.display = 'none';
+    }
+
   </script>
 
 
