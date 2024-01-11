@@ -4,4 +4,5 @@ export interface Game{
     releaseYear: number;
     genre: string[];
     platforms: string[];
+    image: string;
 }

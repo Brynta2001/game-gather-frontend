@@ -16,14 +16,14 @@ const renderGames = async () => {
 
     games.forEach((game: Game) => {
         cardContainer.innerHTML += `
-        <div class="col-lg-4 col-12">
+        <div class="col-lg-6 col-12">
             <div class="card card-profile mt-4 z-index-2">
                 <div class="row">
                     <div class="col-lg-6 col-md-8 col-12">
                         <a href="javascript:;">
                             <div class="p-3 pe-md-0">
                                 <img class="w-100 border-radius-md shadow-lg"
-                                    src="https://picsum.photos/200/200" alt="image">
+                                    src="${game.image}" alt="image">
                             </div>
                         </a>
                     </div>
