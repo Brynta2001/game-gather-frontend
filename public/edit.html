@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <title>Game Gather</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f9e2e8e2a6.js" crossorigin="anonymous"></script>
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="assets/css/card.css" />
+  <link rel="stylesheet" href="assets/css/create.css" />
+
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- Barra de Navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid" style="margin: 0 10%">
+      <!-- Logo -->
+      <a class="navbar-brand" href="/dashboard.html">
+        <img src="assets/images/logo.png" alt="Logo" height="40" class="d-inline-block align-top">
+      </a>
+
+      <!-- Botón de menú para pantallas pequeñas -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Enlaces de Navegación -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- Enlace al Home -->
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard.html">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+          <div class="container d-flex justify-content-center">
+            <div class="upload-form">
+              <form action method="post" class="color-1">
+
+                <h1><strong class="color-3">Game edit</strong></h1>
+                <br>
+                <label for="title">Title</label>
+                <div class="form-group left">
+                  <input type="text" name="title" id="title" class="form-controll" />
+                </div>
+                <br>
+                <label for="title">Plataforms</label>
+
+                <div class="container d-flex justify-content-center ">
+                  <div class="row m-0">
+                    <div class="d-flex justify-content-center align-items-center pd-0">
+                      <select class="js-select2" multiple="multiple">
+                        <option value="1" data-badge="">Atari 2600</option>
+                        <option value="2" data-badge="">Dreamcast</option>
+                        <option value="3" data-badge="">Game Boy</option>
+                        <option value="4" data-badge="">GameCube</option>
+                        <option value="5" data-badge="">Genesis</option>
+                        <option value="6" data-badge="">Intellivision</option>
+                        <option value="7" data-badge="">NES</option>
+                        <option value="8" data-badge="">Nintendo 64</option>
+                        <option value="9" data-badge="">PC</option>
+                        <option value="10" data-badge="">PlayStation</option>
+                        <option value="11" data-badge="">PlayStation 2</option>
+                        <option value="12" data-badge="">PlayStation 3</option>
+                        <option value="13" data-badge="">PlayStation 4</option>
+                        <option value="14" data-badge="">Sega Saturn</option>
+                        <option value="15" data-badge="">SNES</option>
+                        <option value="16" data-badge="">Xbox</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <!-- Cambié el tipo de input a textarea -->
+                  <textarea name="description" id="description" class="form-control"></textarea>
+                </div>
+                <br>
+                <div class="form-group file-area">
+                  <label for="images">Upload an Image</label>
+                  <input type="file" name="images" id="images" accept=".jpg, .jpeg, .png" required="required" />
+                  <div class="file-dummy" onclick="chooseFile()">
+                    <div class="success" id="preview-container"></div>
+                    <div class="default">
+                      <h2><i class="fa-solid fa-upload color-1"></i></h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group d-flex justify-content-center mtcard-1">
+                  <button type="submit"><i class="fa-solid fa-floppy-disk"></i>Guardar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ***** Details End ***** -->
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2036 <a href="#">Game Gather</a> Company. All rights reserved.
+
+            <br>Design: <a>MetaLabs</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function chooseFile() {
+      document.getElementById('images').click();
+    }
+
+    document.getElementById('images').addEventListener('change', function () {
+      var fileInput = this;
+      var previewContainer = document.getElementById('preview-container');
+
+      // Limpiar la vista previa anterior
+      while (previewContainer.firstChild) {
+        previewContainer.removeChild(previewContainer.firstChild);
+      }
+
+      var files = fileInput.files;
+      if (files.length > 0) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          var img = document.createElement('img');
+          img.className = 'preview';
+          img.src = e.target.result;
+          previewContainer.appendChild(img);
+        };
+        reader.readAsDataURL(files[0]);
+      }
+    });
+  </script>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/popper.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
