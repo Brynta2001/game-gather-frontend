@@ -85,15 +85,17 @@
                 <br>
                 <label for="title">Title</label>
                 <div class="form-group left">
-                  <input type="text" name="title" id="title" style="border-radius: 5px;" required/>
+                  <input type="text" name="title" id="title" style="border-radius: 5px;" required />
                 </div>
                 <label for="publisher">Publisher</label>
                 <div class="form-group left">
-                  <input type="text" name="publisher" id="publisher" style="border-radius: 5px;" required/>
+                  <input type="text" name="publisher" id="publisher" style="border-radius: 5px;" required />
                 </div>
                 <label for="releaseYear">Year</label>
                 <div class="form-group left">
-                  <input type="number" name="releaseYear" id="releaseYear" style="border-radius: 5px;" required/>
+                  <input type="number" name="releaseYear" id="releaseYear" style="border-radius: 5px;" required
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength="4" />
                 </div>
                 <label for="genres">Genres</label>
                 <div class="container d-flex justify-content-center ">
@@ -145,8 +147,8 @@
                 </div>
                 <div class="form-group file-area">
                   <div>
-                    <label for="images">Upload an Image</label>                    
-                  </div>                 
+                    <label for="images">Upload an Image</label>
+                  </div>
                   <input type="file" name="images" id="images" accept=".jpg, .jpeg, .png" required="required" />
                   <div class="file-dummy" onclick="chooseFile()">
                     <div class="success" id="preview-container"></div>
@@ -182,6 +184,30 @@
     </div>
   </footer>
 
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #fff; border-radius: 15px;">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" style="color: #ed6190;" id="staticBackdropLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Contenido del modal -->
+          <p id="modal-message" style="color: #333;"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            style="background-color: #343a40; color: #fff; border-radius: 50px;">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+            style="background-color: #e75f8c; color: #fff; border-radius: 50px;">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Scripts -->
   <script>
     function chooseFile() {
@@ -213,8 +239,8 @@
     });
 
     function removeFile() {
-    var input = document.getElementById('images');
-    var previewContainer = document.getElementById('preview-container');
+      var input = document.getElementById('images');
+      var previewContainer = document.getElementById('preview-container');
 
       input.value = '';
       previewContainer.innerHTML = '';
