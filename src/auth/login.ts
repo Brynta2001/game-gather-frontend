@@ -1,6 +1,8 @@
 import { axiosInstance } from "../utils/axios";
 
 const formLogin = document.getElementById('loginForm') as HTMLFormElement;
+const modalTitle = document.getElementById('staticBackdropLabel') as HTMLHeadingElement;
+const modalMessage = document.getElementById('modal-message') as HTMLParagraphElement;
 
 formLogin.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -14,9 +16,15 @@ const login = async () => {
         }
     }).then((response) => {
         console.log(response);
+        modalTitle.textContent = 'Success';
+        modalMessage.textContent = 'Usuario created successfully';
+        $('#staticBackdrop').modal('show');
+        $('#staticBackdrop').on('hidden.bs.modal', function () {
+            // Redirigir a la página login.html
+            window.location.href = '../games/dashboard.html';
+        });
         localStorage.setItem('token', response.data.token);
         axiosInstance.defaults.headers.common['Authorization'] = response.data.token;
-        window.location.href = '../games/dashboard.html';
     }).catch((error) => {
         console.log(error);
     })
