@@ -2,8 +2,14 @@ import { axiosInstance } from "../utils/axios";
 import { Game } from "./interfaces/game.interface";
 
 const cardContainer = document.getElementById('card-container') as HTMLDivElement;
+/*
+const token: string | null = localStorage.getItem('token');
 
-
+if (!token) {
+    window.location.href = '../auth/login.html';
+} else {
+    console.log('Token válido:', token);
+}*/
 
 const getGames = async () => {
     const games = await axiosInstance.get('/games');
