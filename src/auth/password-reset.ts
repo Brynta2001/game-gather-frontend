@@ -20,6 +20,7 @@ const reset = async () => {
         }
     }).then((response) => {
         console.log(response);
+        window.location.href = '../auth/login.html';
     }).catch((error) => {
         console.log(error);
     })
