@@ -7,10 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <title>Login - Game Gather</title>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
-    <link rel="stylesheet" href="assets/css/simple-form.css">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="../assets/css/simple-form.css">
 
 </head>
 
@@ -31,7 +31,7 @@
     <div class="container">
         <div style="text-align: center;">
             <a href="#" class="logo-container">
-                <img src="assets/images/logo.png" alt="Cyborg Gaming">
+                <img src="../assets/images/logo.png" alt="Cyborg Gaming">
             </a>
         </div>
     </div>
@@ -44,7 +44,7 @@
                     <div class="login-form">
                         <h2 style="color: #ed6190;">Welcome back</h2>
                         <br />
-                        <form id="loginForm" action="/" method="post">
+                        <form id="loginForm">
                             <!-- Mensaje de error -->
                             <div id="error-message" style="color: #ff0000; display: none;">
                                 Incorrect username or password. Please try again.
@@ -52,9 +52,9 @@
                             <br />
                             <div class="form-group">
                                 <div class="d-flex d-flex justify-content-center">
-                                    <label for="username" class="d-flex form-div">Username</label>
+                                    <label for="email" class="d-flex form-div">Username</label>
                                 </div>
-                                <input type="text" id="username" name="username" class="form-control" required>
+                                <input type="text" id="email" name="email" class="form-control" required>
                             </div>
                             <br />
                             <div class="form-group">
@@ -64,7 +64,7 @@
                                 <input type="password" id="password" name="password" class="form-control" required>
                             </div>
                             <br />
-                            <button type="submit" class="btn btn-primary" onclick="checkLogin()">Login</button>
+                            <button type="submit" class="btn btn-primary">Login</button>
                             <br />
                         </form>
                         <br />
@@ -102,9 +102,10 @@
     </footer>
 
     <!-- ***** Scripts ***** -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script type="module" src="../../src/auth/login.ts"></script>
     <script>
         // Función para verificar el inicio de sesión (debes implementarla según tus necesidades)
         function checkLogin() {
