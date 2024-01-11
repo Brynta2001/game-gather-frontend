@@ -186,7 +186,7 @@ button i{
 }
 
 selection{
-  width: 80%;
+  width: 100%;
 }
 
 .selection{
@@ -212,3 +212,5 @@ selection{
 .select2-dropdown{
   background-color: #474a4a;
 }
+
+
