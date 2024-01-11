@@ -1,4 +1,5 @@
 export interface Game{
+    id: number;
     title: string;
     publisher: string;
     releaseYear: number;

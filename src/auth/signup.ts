@@ -17,7 +17,7 @@ const signup = async () => {
     }).then(() => {
         //console.log(response);
         modalTitle.textContent = 'Success';
-        modalMessage.textContent = 'Usuario created successfully';
+        modalMessage.textContent = 'User created successfully';
         $('#staticBackdrop').modal('show');
         $('#staticBackdrop').on('hidden.bs.modal', function () {
             // Redirigir a la página login.html

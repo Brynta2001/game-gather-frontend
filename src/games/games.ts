@@ -20,7 +20,7 @@ const renderGames = async () => {
             <div class="card card-profile mt-4 z-index-2">
                 <div class="row">
                     <div class="col-lg-6 col-md-8 col-12">
-                        <a href="javascript:;">
+                        <a href="game.html?id=${game.id}">
                             <div class="p-3 pe-md-0">
                                 <img class="w-100 border-radius-md shadow-lg"
                                     src="${game.image}" alt="image">
