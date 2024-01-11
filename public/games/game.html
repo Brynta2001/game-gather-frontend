@@ -81,17 +81,29 @@
                           style="border-radius: 23px; margin-bottom: 30px;">
                       </div>
                       <div class="btn-container position-absolute d-flex flex-end">
-                        <button class="d-flex align-items-center justify-content-center">
-                          <h3><i class="fa-solid fa-trash"></i></i></h3></i>
-                        </button>
-                        <button class="square-button d-flex align-items-center justify-content-center">
-                          <h3><i class="fa-solid fa-comment"></i></h3></i>
-                        </button>
+                        <!-- Enlace al elemento que deseas editar -->
+                        <a href="/ruta-a-la-pagina-de-edicion"
+                          class="square-button d-flex align-items-center justify-content-center">
+                          <h3><i class="fa-solid fa-pencil"></i></h3>
+                        </a>
+
+                        <!-- Enlace para eliminar el elemento -->
+                        <a href="/ruta-para-eliminar"
+                          class="square-button d-flex align-items-center justify-content-center">
+                          <h3><i class="fa-solid fa-trash"></i></h3>
+                        </a>
+
+                        <!-- Enlace para comentarios -->
+                        <a href="/ruta-a-los-comentarios"
+                          class="square-button d-flex align-items-center justify-content-center">
+                          <h3><i class="fa-solid fa-comment"></i></h3>
+                        </a>
                       </div>
                     </div>
                     <div class="card-body">
                       <h5 id="game-title" class="card-title">Game title</h5>
-                      <p id="game-description" class="card-text color-1">Lorem Ipsum is simply dummy text of the printing and typesetting
+                      <p id="game-description" class="card-text color-1">Lorem Ipsum is simply dummy text of the
+                        printing and typesetting
                         industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
                         unknown printer took a galley of type and scrambled it to make a type specimen book. It has
                         survived not only fivLorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -100,90 +112,88 @@
                         only fiv</p>
 
                       <h6 class="mtcard-1 color-1">Plataforms: </h6>
-                        <p id="game-platforms"></p>
-                      </div>
-                    </div>
-                    <div class="card-footer-container">
-                      <div class="card-footer">
-                        <div class="row d-flex justify-content-between publisher">
-                          <div class="col-lg-9 card-footer-item ">
-                            <img class="rounded-circle" src="https://picsum.photos/50" alt="Imagen del usuario">
-                            <strong>Usuario</strong>
-                          </div>
-                          <div class="col-lg-2 card-footer-item float-right">
-                            <div>
-                              <span class="badge badge-secondary">5 comments</span>
-                              <span class="badge badge-primary">4.5 <i class="fa-regular fa-star"></i></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-footer-item row d-flex pl-rating">
-                          <div class="rating float-right flex-end">
-                            <span class="star" onclick="changeRating(1)"><i class="fa-regular fa-star"></i></span>
-                            <span class="star" onclick="changeRating(2)"><i class="fa-regular fa-star"></i></span>
-                            <span class="star" onclick="changeRating(3)"><i class="fa-regular fa-star"></i></span>
-                            <span class="star" onclick="changeRating(4)"><i class="fa-regular fa-star"></i></span>
-                            <span class="star" onclick="changeRating(5)"><i class="fa-regular fa-star"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="mtcard-1">
-                        <div>
-                          <div style="margin: 0 10px;" class="card-footer-item input-commentary">
-                            <input type="text" class="form-control" placeholder="Agregar un comentario...">
-                            <button class="btn btn-primary d-flex align-items-center justify-content-center"
-                              type="button"><i class="fa-solid fa-paper-plane"></i>
-                            </button>
-
-                          </div>
-                        </div>
-                        <div class="card-footer-item comment-section">
-                          <ul class="list-group">
-                            <li class="d-flex">
-                              <div style="margin-left: 10px;">
-                                <img class="profile-pic" src="https://picsum.photos/10?id=2"
-                                  alt="Foto de perfil del usuario">
-                                <span class="username">usuario</span>
-
-                                <div>
-
-                                  <p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer took a galley of type and scrambled it to make a
-                                    type specimen book. It has survived not only fiv</p>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="d-flex">
-                              <div style="margin-left: 10px;">
-                                <img class="profile-pic" src="https://picsum.photos/10?id=2"
-                                  alt="Foto de perfil del usuario">
-                                <span class="username">usuario</span>
-                                <div>
-                                  <p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer took a galley of type and scrambled it to make a
-                                    type specimen book. It has survived not only fiv</p>
-                                </div>
-                              </div>
-                            </li>
-                            <br />
-                          </ul>
-                        </div>
-                      </div>
-
+                      <p id="game-platforms"></p>
                     </div>
                   </div>
+                  <div class="card-footer-container">
+                    <div class="card-footer">
+                      <div class="row d-flex justify-content-between publisher">
+                        <div class="col-lg-9 card-footer-item ">
+                          <img class="rounded-circle" src="https://i.pravatar.cc/50" alt="Imagen del usuario">
+                          <strong>Usuario</strong>
+                        </div>
+                        <div class="col-lg-2 card-footer-item float-right">
+                          <div>
+                            <span class="badge badge-secondary">5 comments</span>
+                            <span class="badge badge-primary">4.5 <i class="fa-regular fa-star"></i></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer-item row d-flex pl-rating">
+                        <div class="rating float-right flex-end">
+                          <span class="star" onclick="changeRating(1)"><i class="fa-regular fa-star"></i></span>
+                          <span class="star" onclick="changeRating(2)"><i class="fa-regular fa-star"></i></span>
+                          <span class="star" onclick="changeRating(3)"><i class="fa-regular fa-star"></i></span>
+                          <span class="star" onclick="changeRating(4)"><i class="fa-regular fa-star"></i></span>
+                          <span class="star" onclick="changeRating(5)"><i class="fa-regular fa-star"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mtcard-1">
+                      <div>
+                        <div style="margin: 0 10px;" class="card-footer-item input-commentary">
+                          <input type="text" class="form-control" placeholder="Agregar un comentario...">
+                          <button class="btn btn-primary d-flex align-items-center justify-content-center"
+                            type="button"><i class="fa-solid fa-paper-plane"></i>
+                          </button>
 
+                        </div>
+                      </div>
+                      <div class="card-footer-item comment-section">
+                        <ul class="list-group">
+                          <li class="d-flex">
+                            <div style="margin-left: 10px;">
+                              <img class="profile-pic" src="https://i.pravatar.cc/50" alt="Foto de perfil del usuario">
+                              <span class="username">usuario</span>
+
+                              <div>
+
+                                <p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                  industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                  1500s, when an unknown printer took a galley of type and scrambled it to make a
+                                  type specimen book. It has survived not only fiv</p>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="d-flex">
+                            <div style="margin-left: 10px;">
+                              <img class="profile-pic" src="https://i.pravatar.cc/50" alt="Foto de perfil del usuario">
+                              <span class="username">usuario</span>
+                              <div>
+                                <p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                  industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                  1500s, when an unknown printer took a galley of type and scrambled it to make a
+                                  type specimen book. It has survived not only fiv</p>
+                              </div>
+                            </div>
+                          </li>
+                          <br />
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
 
               </div>
+
             </div>
           </div>
         </div>
       </div>
-      <!-- ***** Details End ***** -->
     </div>
+    <!-- ***** Details End ***** -->
+  </div>
   </div>
   </div>
   </div>
