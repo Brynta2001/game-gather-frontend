@@ -1,25 +1,32 @@
 import { axiosInstance } from "../utils/axios";
 
-const formGame = document.querySelector<HTMLButtonElement>('#createForm')!;
+const gameForm = document.querySelector<HTMLButtonElement>('#create-game-form')!;
 
-formGame.addEventListener('submit', async (event) => {
+gameForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const response = await signup();
     console.log(response);
 });
 
-export const signup = async () => {
-    const response = await axiosInstance.post("/games", {
-        title: "Rocket League",
-        publisher: "Psyonix",
-        releaseYear: 2015,
-        genre: ["Sports"],
-        platforms: ["PC"],
-    }, {
+const signup = async () => {
+    await axiosInstance.post("/games", gameForm, {
         headers: {
             "Content-Type": "application/json",
         }
+    }).then(() => {
+        //console.log(response);
+        /*modalTitle.textContent = 'Success';
+        modalMessage.textContent = 'Usuario created successfully';
+        $('#staticBackdrop').modal('show');
+        $('#staticBackdrop').on('hidden.bs.modal', function () {
+            // Redirigir a la página login.html
+            window.location.href = 'login.html';
+        });*/
+    }).catch((error) => {
+        console.log(error);
+        //modalTitle.textContent = 'Error creating user';
+        //modalMessage.textContent = error.response?.data?.message;
+        //$('#staticBackdrop').modal('show');
     });
-    return response.data;
 };
