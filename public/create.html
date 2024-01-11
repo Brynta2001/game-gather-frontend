@@ -49,39 +49,31 @@
   </div>
   <!-- ***** Preloader End ***** -->
 
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
-              <img src="assets/images/logo.png" alt="">
-            </a>
-            <!-- ***** Logo End ***** -->
+  <!-- Barra de Navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid" style="margin: 0 10%">
+      <!-- Logo -->
+      <a class="navbar-brand" href="/dashboard.html">
+        <img src="assets/images/logo.png" alt="Logo" height="40" class="d-inline-block align-top">
+      </a>
 
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-              <li><a href="index.html">Logout</a></li>
-              <li><a href="profile.html">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li>
-            </ul>
-            <a class='menu-trigger'>
-              <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
+      <!-- Botón de menú para pantallas pequeñas -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-
-
-
-
-
-          </nav>
-        </div>
+      <!-- Enlaces de Navegación -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- Enlace al Home -->
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard.html">Home</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+  </nav>
 
 
 

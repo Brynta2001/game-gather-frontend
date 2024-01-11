@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <title>Game Gather</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f9e2e8e2a6.js" crossorigin="anonymous"></script>
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/chat.css" />
+
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo.png" alt="">
+            </a>
+            <!-- ***** Logo End ***** -->
+
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="index.html">Logout</a></li>
+              <li><a href="profile.html">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content d-flex justify-content-center">
+            <section id="chat">
+                <div class="">
+                    <ul id="messages" class="scroll comment-section">
+                        <li class="d-flex message">
+                            <div>
+                              <img class="profile-pic" src="https://picsum.photos/10?id=2"
+                                alt="Foto de perfil del usuario">
+                              <span class="username">usuario</span>
+                              <div>
+                                <p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                  industry. Lorem Ipsum has been the industry's standard du
+                                  </p>
+                              </div>
+                            </div>
+    
+                        </li>
+                        <li class="d-flex message">
+                            <div>
+                              <img class="profile-pic" src="https://picsum.photos/10?id=2"
+                                alt="Foto de perfil del usuario">
+                              <span class="username">usuario</span>
+                              <div>
+                                <p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                  industry. Lorem Ipsum has been the industry's standard du
+                                  </p>
+                              </div>
+                            </div>
+    
+                        </li>
+                        <li class="d-flex message">
+                            <div>
+                              <img class="profile-pic" src="https://picsum.photos/10?id=2"
+                                alt="Foto de perfil del usuario">
+                              <span class="username">usuario</span>
+                              <div>
+                                <p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                  industry. Lorem Ipsum has been the industry's standard du
+                                  </p>
+                              </div>
+                            </div>
+    
+                        </li>
+                        
+                    </ul>
+                </div>                
+               
+                <form id="form" action="">
+                  <input id="input" autocomplete="off" /><button>Enviar</button>
+                </form>
+                <div id="log"></div>
+                <script type="module">
+            
+                  import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+                  const getUsername = async () => {
+                    const username = localStorage.getItem('username')
+                    if (username) {
+                      logMessage(`generated username ${username}`)
+                      return username
+                    }
+            
+                    const res = await fetch('https://random-data-api.com/api/v2/users')
+                    const { username: randomUsername } = await res.json()
+            
+                    localStorage.setItem('username', randomUsername)
+                    logMessage(`generated username ${randomUsername}`)
+            
+                    return randomUsername
+                  }
+            
+                  const socket = io({
+                    auth: {
+                      username: await getUsername(),
+                      serverOffset: 0
+                    }
+                  })
+            
+                  let username; 
+                  getUsername().then((name) => {
+                    username = name; // Set the username
+                  });
+            
+            
+                  const form = document.getElementById('form');
+                  const input = document.getElementById('input');
+                  
+            
+                  form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+            
+                    if (input.value) {
+                      socket.emit('chat message', input.value);
+                      input.value = '';
+                    }
+                  });
+                  const messages = document.getElementById('messages');
+            
+                  socket.on('chat message', (msg, serverOffset, username)  => {
+                    const item = `<li><p>${msg}</p><small>enviado por ${username}</li>`;
+            
+                    messages.insertAdjacentHTML('beforeend', item);
+                    socket.auth.serverOffset = serverOffset // <----
+                  })
+            
+            
+                  socket.on('disconnect', (socket) => {
+                    console.log(socket)
+                    logMessage('disconnected')
+                  })
+            
+                  function logMessage(msg) {
+                    const log = document.getElementById('log');
+                    log.insertAdjacentHTML('beforeend', `<p>${msg}</p>`);
+                  }    
+                </script>
+            </section>
+
+
+        </div>
+        <!-- ***** Details End ***** -->
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2036 <a href="#">Game Gather</a> Company. All rights reserved.
+
+            <br>Design: <a>MetaLabs</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+
+</body>
+
+</html>
