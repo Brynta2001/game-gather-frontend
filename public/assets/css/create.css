@@ -183,3 +183,7 @@ button i{
   color: #fff;
   border: 0;
 }
+
+selection{
+  width: 80%;
+}
