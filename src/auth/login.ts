@@ -24,6 +24,7 @@ const login = async () => {
             window.location.href = '../games/dashboard.html';
         });
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
         axiosInstance.defaults.headers.common['Authorization'] = response.data.token;
     }).catch((error) => {
         console.log(error);
