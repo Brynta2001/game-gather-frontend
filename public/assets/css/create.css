@@ -207,3 +207,8 @@ selection{
 .row .m-0{
   width: 100%;
 }
+
+
+.select2-dropdown{
+  background-color: #474a4a;
+}
