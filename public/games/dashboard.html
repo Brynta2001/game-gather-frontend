@@ -123,6 +123,22 @@
         p {
             color: #333;
         }
+
+        .create {
+            background-color: #e75f8c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 50px;
+            width: 35%;
+        }
+
+        .create:hover {
+            background-color: #fff;
+            color: #e75f8c;
+        }
     </style>
 </head>
 
@@ -171,8 +187,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 text-start mb-5 mt-5">
-                    <h1 style="color: #ed6190;" class="z-index-1 position-relative">Game List</h1>
-                    <p class="text-white opacity-8 mb-0">check discussions about your favorite game</p>
+                    <h1 style="color: #ed6190;" class="z-index-1 position-relative"><strong>Game List</strong></h1>
+                    <p style="font-size: 20px;" class="text-white opacity-10 mb-0">Learn and participate in discussions
+                        about your favorite game</p>
+                    <br>
+                    <a href="/games/create.html">
+                        <button type="button" class="create">Create Game</button>
+                    </a>
                 </div>
             </div>
             <div id="card-container" class="row"></div>

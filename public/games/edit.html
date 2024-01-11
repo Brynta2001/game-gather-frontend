@@ -171,6 +171,30 @@
   </div>
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #fff; border-radius: 15px;">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" style="color: #ed6190;" id="staticBackdropLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Contenido del modal -->
+          <p id="modal-message" style="color: #333;"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            style="background-color: #343a40; color: #fff; border-radius: 50px;">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+            style="background-color: #e75f8c; color: #fff; border-radius: 50px;">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <footer>
     <div class="container">
       <div class="row">
@@ -240,7 +264,7 @@
   <script src="../assets/js/main.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
   <script type="module" src="../../src/games/edit.ts"></script>
-
+  <script type="module" src="../../src/games/delete.ts"></script>
 
 </body>
 

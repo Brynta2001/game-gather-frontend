@@ -88,7 +88,7 @@
                         </a>
 
                         <!-- Enlace para eliminar el elemento -->
-                        <a href="/ruta-para-eliminar"
+                        <a id="game-reference-delete" href="/ruta-a-la-pagina-de-eliminacion"
                           class="square-button d-flex align-items-center justify-content-center">
                           <h3><i class="fa-solid fa-trash"></i></h3>
                         </a>
@@ -103,8 +103,15 @@
                     <div class="card-body">
                       <h5 id="game-title" class="card-title">Fornite</h5>
                       <p id="game-description" class="card-text color-1">
-                        Fortnite is an online video game and game platform developed by Epic Games and released in 2017. It is available in six distinct game mode versions that otherwise share the same general gameplay and game engine: Fortnite Battle Royale, a free-to-play battle royale game in which up to 100 players fight to be the last person standing; Fortnite: Save the World, a cooperative hybrid tower defense-shooter and survival game in which up to four players fight off zombie-like creatures and defend objects with traps and fortifications they can build; and Fortnite Creative, in which players are given complete freedom to create worlds and battle arenas, Lego Fortnite, Rocket Racing and Fortnite Festival.
-                      
+                        Fortnite is an online video game and game platform developed by Epic Games and released in 2017.
+                        It is available in six distinct game mode versions that otherwise share the same general
+                        gameplay and game engine: Fortnite Battle Royale, a free-to-play battle royale game in which up
+                        to 100 players fight to be the last person standing; Fortnite: Save the World, a cooperative
+                        hybrid tower defense-shooter and survival game in which up to four players fight off zombie-like
+                        creatures and defend objects with traps and fortifications they can build; and Fortnite
+                        Creative, in which players are given complete freedom to create worlds and battle arenas, Lego
+                        Fortnite, Rocket Racing and Fortnite Festival.
+
                       </p>
 
                       <h6 class="mtcard-1 color-1">Plataforms: </h6>
@@ -112,8 +119,8 @@
                     </div>
                   </div>
                   <div class="card-footer-container">
-                    
-                   
+
+
 
                   </div>
                 </div>
@@ -130,6 +137,30 @@
   </div>
   </div>
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #fff; border-radius: 15px;">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" style="color: #ed6190;" id="staticBackdropLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Contenido del modal -->
+          <p id="modal-message" style="color: #333;"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            style="background-color: #343a40; color: #fff; border-radius: 50px;">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+            style="background-color: #e75f8c; color: #fff; border-radius: 50px;">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <footer>
     <div class="container">
