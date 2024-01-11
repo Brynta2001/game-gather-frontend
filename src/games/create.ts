@@ -1,21 +1,53 @@
 import { axiosInstance } from "../utils/axios";
 
-const gameForm = document.querySelector<HTMLButtonElement>('#create-game-form')!;
+const createGameForm = document.querySelector<HTMLButtonElement>('#create-game-form')!;
 
-gameForm.addEventListener('submit', async (event) => {
+
+
+createGameForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const response = await signup();
-    console.log(response);
+    const { selectedOptions: selectedGenreOptions } = document.querySelector<HTMLSelectElement>('#genre-selector')!;
+    const selectedGenres = [...selectedGenreOptions].map((element) => {
+        return element.text;
+    });
+
+    const { selectedOptions: selectedPlatformOptions } = document.querySelector<HTMLSelectElement>('#platform-selector')!;
+    const selectedPlatforms = [...selectedPlatformOptions].map((element) => {
+        return element.text;
+    });
+
+    const createGame = {
+        title: document.querySelector<HTMLInputElement>('#title')!.value,
+        publisher: document.querySelector<HTMLInputElement>('#publisher')!.value,
+        releaseYear: +document.querySelector<HTMLInputElement>('#releaseYear')!.value,
+        genre: selectedGenres,
+        platforms: selectedPlatforms,
+        description: document.querySelector<HTMLTextAreaElement>('#description')!.value,
+        image: "",
+    };
+
+    await create(createGame);
 });
 
-const signup = async () => {
-    await axiosInstance.post("/games", gameForm, {
+const create = async (createGame: any) => {
+
+    await axiosInstance.post("/games/images", {
+        file: document.querySelector('#images')!.files[0]
+    }, {
         headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'multipart/form-data',
         }
-    }).then(() => {
-        //console.log(response);
+    }).then((response) => {
+        createGame.image = response.data.secureUrl;
+    })
+
+    await axiosInstance.post("/games", createGame, {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then((response) => {
+        console.log(response);
         /*modalTitle.textContent = 'Success';
         modalMessage.textContent = 'Usuario created successfully';
         $('#staticBackdrop').modal('show');

@@ -215,11 +215,9 @@
     function removeFile() {
     var input = document.getElementById('images');
     var previewContainer = document.getElementById('preview-container');
-    var removeBtn = document.querySelector('.remove-btn');
 
       input.value = '';
       previewContainer.innerHTML = '';
-      removeBtn.style.display = 'none';
     }
 
   </script>
@@ -237,6 +235,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script type="module" src="../../src/games/create.ts"></script>
 
 
 </body>
