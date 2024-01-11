@@ -142,6 +142,7 @@ button i{
 }
 
 .select2-container--default .select2-selection--multiple {
+  width: 90%;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -186,4 +187,8 @@ button i{
 
 selection{
   width: 80%;
+}
+
+.m-0{
+  margin: 0;
 }
