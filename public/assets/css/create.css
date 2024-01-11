@@ -1,5 +1,11 @@
 @import "compass/css3";
 
+
+body{
+  background-color: #1e2123;
+}
+
+
 /* ===================== FILE INPUT ===================== */
 .file-area {
   width: 100%;
@@ -133,4 +139,47 @@ button i{
 
 .upload-form input{
   margin: 0;
+}
+
+.select2-container--default .select2-selection--multiple {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.select2-results__option[aria-selected=true]:before {
+  background-color: #e75f8c;
+}
+
+.select2-results__option{
+  background-color: rgba(0, 0, 0, 0.851);
+}
+
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #474a4a;
+}
+
+.pd-0{
+  padding: 0;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__clear{
+  color:#fff;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice{
+  background-color: #e75f8c;
+  color: #fff;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  color: #fff;
+}
+
+.select2-container--default .select2-results__option[aria-selected="true"]{
+  background-color: #474a4a;
+}
+
+.select2-results__option,.select2-results__option--highlighted{
+  color: #fff;
+  border: 0;
 }

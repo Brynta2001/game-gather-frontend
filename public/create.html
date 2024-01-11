@@ -21,8 +21,17 @@
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+
+
   <link rel="stylesheet" href="assets/css/card.css" />
   <link rel="stylesheet" href="assets/css/create.css" />
+
+
+
 </head>
 
 <body>
@@ -60,13 +69,13 @@
             <a class='menu-trigger'>
               <span>Menu</span>
             </a>
-            <!-- ***** Menu End ***** -->           
-                      
-            
-              
-              
-              
-             
+            <!-- ***** Menu End ***** -->
+
+
+
+
+
+
           </nav>
         </div>
       </div>
@@ -74,49 +83,74 @@
   </header>
   <!-- ***** Header Area End ***** -->
 
-  
+
 
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         <div class="page-content">
-            <div class="container d-flex justify-content-center">
-              <div class="upload-form">
-                <form action method="post" class="color-1">
-                  
-                    <h1><strong class="color-3">Game upload</strong></h1>
-                    <br>
-                    <label for="title">Title</label>
-                    <div class="form-group left">                      
-                      <input type="text" name="title" id="title" class="form-controll"/>
+          <div class="container d-flex justify-content-center">
+            <div class="upload-form">
+              <form action method="post" class="color-1">
+
+                <h1><strong class="color-3">Game upload</strong></h1>
+                <br>
+                <label for="title">Title</label>
+                <div class="form-group left">
+                  <input type="text" name="title" id="title" class="form-controll" />
+                </div>
+                <br>
+                <label for="title">Plataforms</label>
+
+                <div class="container left">
+                  <div class="row">
+                    <div class="col-lg-4 d-flex justify-content-center align-items-center pd-0">
+                      <select class="js-select2" multiple="multiple">
+                        <option value="1" data-badge="">Atari 2600</option>
+                        <option value="2" data-badge="">Dreamcast</option>
+                        <option value="3" data-badge="">Game Boy</option>
+                        <option value="4" data-badge="">GameCube</option>
+                        <option value="5" data-badge="">Genesis</option>
+                        <option value="6" data-badge="">Intellivision</option>
+                        <option value="7" data-badge="">NES</option>
+                        <option value="8" data-badge="">Nintendo 64</option>
+                        <option value="9" data-badge="">PC</option>
+                        <option value="10" data-badge="">PlayStation</option>
+                        <option value="11" data-badge="">PlayStation 2</option>
+                        <option value="12" data-badge="">PlayStation 3</option>
+                        <option value="13" data-badge="">PlayStation 4</option>
+                        <option value="14" data-badge="">Sega Saturn</option>
+                        <option value="15" data-badge="">SNES</option>
+                        <option value="16" data-badge="">Xbox</option>
+                      </select>
                     </div>
-                    <br>
-                    <label for="title">Plataforms</label>
-                    <div class="form-group left">                      
-                      <input type="text" name="title" id="title" class="form-controll"/>
+                  </div>
+                </div>
+
+                <br>
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <!-- Cambié el tipo de input a textarea -->
+                  <textarea name="description" id="description" class="form-control"></textarea>
+                </div>
+                <br>
+                <div class="form-group file-area">
+                  <label for="images">Upload an Image</label>
+                  <input type="file" name="images" id="images" accept=".jpg, .jpeg, .png" required="required" />
+                  <div class="file-dummy" onclick="chooseFile()">
+                    <div class="success" id="preview-container"></div>
+                    <div class="default">
+                      <h2><i class="fa-solid fa-upload"></i></h2>
                     </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <!-- Cambié el tipo de input a textarea -->
-                        <textarea name="description" id="description" class="form-control"></textarea>
-                    </div>
-                    <br>
-                    <div class="form-group file-area">
-                          <label for="images">Upload an Image</label>
-                      <input type="file" name="images" id="images" accept=".jpg, .jpeg, .png" required="required"/>
-                      <div class="file-dummy" onclick="chooseFile()">
-                        <div class="success" id="preview-container"></div>
-                        <div class="default"><h2><i class="fa-solid fa-upload"></i></h2></div>
-                      </div>
-                    </div>
-                    
-                    <div class="form-group d-flex justify-content-center mtcard-1">
-                      <button type="submit"><i class="fa-solid fa-floppy-disk"></i>Guardar</button>
-                    </div>                                     
-                </form>
-              </div>  
+                  </div>
+                </div>
+
+                <div class="form-group d-flex justify-content-center mtcard-1">
+                  <button type="submit"><i class="fa-solid fa-floppy-disk"></i>Guardar</button>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
       </div>
       <!-- ***** Details End ***** -->
@@ -140,31 +174,31 @@
 
   <!-- Scripts -->
   <script>
-     function chooseFile() {
-    document.getElementById('images').click();
-  }
-
-  document.getElementById('images').addEventListener('change', function () {
-    var fileInput = this;
-    var previewContainer = document.getElementById('preview-container');
-
-    // Limpiar la vista previa anterior
-    while (previewContainer.firstChild) {
-      previewContainer.removeChild(previewContainer.firstChild);
+    function chooseFile() {
+      document.getElementById('images').click();
     }
 
-    var files = fileInput.files;
-    if (files.length > 0) {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        var img = document.createElement('img');
-        img.className = 'preview';
-        img.src = e.target.result;
-        previewContainer.appendChild(img);
-      };
-      reader.readAsDataURL(files[0]);
-    }
-  });
+    document.getElementById('images').addEventListener('change', function () {
+      var fileInput = this;
+      var previewContainer = document.getElementById('preview-container');
+
+      // Limpiar la vista previa anterior
+      while (previewContainer.firstChild) {
+        previewContainer.removeChild(previewContainer.firstChild);
+      }
+
+      var files = fileInput.files;
+      if (files.length > 0) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          var img = document.createElement('img');
+          img.className = 'preview';
+          img.src = e.target.result;
+          previewContainer.appendChild(img);
+        };
+        reader.readAsDataURL(files[0]);
+      }
+    });
   </script>
 
 
@@ -176,6 +210,10 @@
   <script src="assets/js/tabs.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="assets/js/popper.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="public\vendor\bootstrap\js\bootstrap.min.js"></script>
 
 
 </body>
