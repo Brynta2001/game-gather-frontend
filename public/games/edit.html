@@ -79,27 +79,27 @@
         <div class="page-content">
           <div class="container d-flex justify-content-center">
             <div class="upload-form">
-              <form action method="post" class="color-1">
+              <form id="editForm" action method="post" class="color-1">
 
                 <h1 style="color: #ed6190; text-align: center;"><strong>Game edit</h1>
                 <br>
                 <label for="title">Title</label>
                 <div class="form-group left">
-                  <input type="text" name="title" id="title" style="border-radius: 5px;" required/>
+                  <input type="text" name="title" id="title" style="border-radius: 5px;" required />
                 </div>
                 <label for="publisher">Publisher</label>
                 <div class="form-group left">
-                  <input type="text" name="publisher" id="publisher" style="border-radius: 5px;" required/>
+                  <input type="text" name="publisher" id="publisher" style="border-radius: 5px;" required />
                 </div>
                 <label for="year">Year</label>
                 <div class="form-group left">
-                  <input type="number" name="year" id="year" style="border-radius: 5px;" required/>
+                  <input type="number" name="year" id="year" style="border-radius: 5px;" required />
                 </div>
                 <label for="genres">Genres</label>
                 <div class="container d-flex justify-content-center ">
                   <div class="row m-0">
                     <div class="d-flex justify-content-center align-items-center pd-0">
-                      <select class="js-select2" multiple="multiple" required>
+                      <select id="genre-selector" class="js-select2" multiple="multiple" required>
                         <option value="1" data-badge="">Action</option>
                         <option value="2" data-badge="">Adventure</option>
                         <option value="3" data-badge="">Puzzle</option>
@@ -118,7 +118,7 @@
                 <div class="container d-flex justify-content-center ">
                   <div class="row m-0">
                     <div class="d-flex justify-content-center align-items-center pd-0">
-                      <select class="js-select2" multiple="multiple" required>
+                      <select id="platform-selector" class="js-select2" multiple="multiple" required>
                         <option value="1" data-badge="">Atari 2600</option>
                         <option value="2" data-badge="">Dreamcast</option>
                         <option value="3" data-badge="">Game Boy</option>
@@ -144,10 +144,10 @@
                   <textarea name="description" id="description" class="form-control" required></textarea>
                 </div>
                 <div class="form-group file-area">
-                  
+
                   <div>
-                    <label for="images">Upload an Image</label>                    
-                  </div>                 
+                    <label for="images">Upload an Image</label>
+                  </div>
                   <input type="file" name="images" id="images" accept=".jpg, .jpeg, .png" required="required" />
                   <div class="file-dummy" onclick="chooseFile()">
                     <div class="success" id="preview-container"></div>
@@ -215,9 +215,9 @@
     });
 
     function removeFile() {
-    var input = document.getElementById('images');
-    var previewContainer = document.getElementById('preview-container');
-    var removeBtn = document.querySelector('.remove-btn');
+      var input = document.getElementById('images');
+      var previewContainer = document.getElementById('preview-container');
+      var removeBtn = document.querySelector('.remove-btn');
 
       input.value = '';
       previewContainer.innerHTML = '';
@@ -239,6 +239,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script type="module" src="../../src/games/edit.ts"></script>
 
 
 </body>

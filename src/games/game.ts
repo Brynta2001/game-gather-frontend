@@ -1,5 +1,7 @@
 import { axiosInstance } from "../utils/axios";
 
+const gameEdit = document.querySelector<HTMLAnchorElement>('#game-reference-edit')!;
+
 const getGame = async (id: number) => {
     const game = await axiosInstance.get(`/games/${id}`);
     return game.data;
@@ -14,6 +16,8 @@ const renderGame = async () => {
     document.getElementById('game-description')!.textContent = game.description;
     document.getElementById('game-platforms')!.textContent = game.platforms.join(' - ');
     document.getElementById('game-image')!.setAttribute('src', game.image);
+
+    gameEdit.setAttribute('href', `edit.html?id=${game.id}`);
 };
 
 renderGame();
